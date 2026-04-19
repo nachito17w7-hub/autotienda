@@ -10,8 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@10.7.0/firebase-app-compat.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/firebase@10.7.0/firebase-firestore-compat.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{background:#0A0A0A;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;}
@@ -285,7 +285,7 @@ function ImportModal({products,onApply,onClose}){
   const analyze=async()=>{
     if(!imgB64) return;setStep("analyzing");setError(null);
     try{
-      const OR_KEY="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";
+      const OR_KEY="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";
       const prompt="Analiza esta imagen de una lista de repuestos. Devuelve SOLO un array JSON sin texto extra. Formato: [{code:string o null,name:string,quantity:number o null,price:number o null}]. Si no hay productos devuelve [].";
       const res=await fetch("https://openrouter.ai/api/v1/chat/completions",{
         method:"POST",
